@@ -13,8 +13,8 @@ order allow,deny
 Deny from all
 </Files>
 
-#Protege ler.md
-<Files ler.md>
+#Protege README.md
+<Files README.md>
 order allow,deny
 Deny from all
 </Files>
