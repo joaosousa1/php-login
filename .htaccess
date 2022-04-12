@@ -1,0 +1,26 @@
+#Ver /etc/apache2/apache.conf se o "Allow Override All"
+#esta ativo, para que as configs em baixo funcionem.
+
+ErrorDocument 403 /notfound.html
+ErrorDocument 404 /notfound.html
+
+#Disable directory browsing
+Options -Indexes
+
+#Protege login-log.txt
+<Files login-log.txt>
+order allow,deny
+Deny from all
+</Files>
+
+#Protege ler.md
+<Files ler.md>
+order allow,deny
+Deny from all
+</Files>
+
+#Proteger htaccess (se ainda não tiver protegido em /etc/apache2/apache.conf)
+<Files .htaccess>
+order allow,deny
+Deny from all
+</Files>
