@@ -25,6 +25,7 @@ $secure = "21232f297a57a5a743894a0e4a801fc3";
 
 if ( secure_input($_POST["name"]) == $user and $p == $secure ) {
     ini_set( 'session.cookie_httponly', 1 );
+    ini_set( 'session.cookie_samesite', 'Strict' );
     session_start();
     $_SESSION['logado'] = true;
     $_SESSION['name'] = secure_input($_POST["name"]);
